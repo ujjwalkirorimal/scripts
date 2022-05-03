@@ -67,10 +67,12 @@ else
 sh_rc=".bashrc"
 fi
 
+mkdir $HOME/ccache
+
 cat <<'EOF' >> $sh_rc
 
 # Super-fast repo sync
-repofastsync() { time schedtool -B -e ionice -n 0 `which repo` sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle -j$(nproc --all) "$@"; }
+repofastsync() { time schedtool -B -e ionice -n 0 `which repo` sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle "$@"; }
 
 # List lib dependencies of any lib/bin
 list_blob_deps() { readelf -d $1 | grep "\(NEEDED\)" | sed -r "s/.*\[(.*)\]/\1/"; }
@@ -78,6 +80,9 @@ list_blob_deps() { readelf -d $1 | grep "\(NEEDED\)" | sed -r "s/.*\[(.*)\]/\1/"
 export TZ='Asia/Kolkata'
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR="$HOME/ccache"
+
+alias cpk="git cherry-pick"
 
 function msg() {
   echo -e "\e[1;32m$1\e[0m"
