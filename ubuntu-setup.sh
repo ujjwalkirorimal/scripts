@@ -209,6 +209,9 @@ git config --global user.name "Jyotiraditya Panda"
 git config --global user.email "jyotiraditya@aospa.co"
 fi
 
+git config --global user.email "ujjwalkirorimal@gmail.com"
+git config --global user.name "Ujjwal Kirorimal"
+
 git config --global alias.cp 'cherry-pick'
 git config --global alias.c 'commit'
 git config --global alias.f 'fetch'
