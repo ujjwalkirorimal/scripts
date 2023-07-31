@@ -43,12 +43,12 @@ unzip -qq platform-tools-latest-linux.zip
 rm platform-tools-latest-linux.zip
 echo -e "Done."
 
-# echo -e "\nInstalling Google Drive CLI..."
-# wget -q https://raw.githubusercontent.com/usmanmughalji/gdriveupload/master/gdrive
-# chmod a+x gdrive
-# sudo install gdrive /usr/local/bin/gdrive
-# rm gdrive
-# echo -e "Done."
+echo -e "\nInstalling Google Drive CLI..."
+wget -q https://raw.githubusercontent.com/usmanmughalji/gdriveup/master/gdrive
+chmod a+x gdrive
+sudo install gdrive /usr/local/bin/gdrive
+rm gdrive
+echo -e "Done."
 
 if [[ $SHELL = *zsh* ]]; then
 sh_rc=".zshrc"
