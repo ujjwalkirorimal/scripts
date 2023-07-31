@@ -58,7 +58,7 @@ fi
 
 echo -e "\nInstalling apktool and JADX..."
 mkdir -p bin
-wget -q https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.7.0.jar -O bin/apktool.jar
+wget -q https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.8.1.jar -O bin/apktool.jar
 echo 'alias apktool="java -jar $HOME/bin/apktool.jar"' >> $sh_rc
 
 wget -q https://github.com/skylot/jadx/releases/download/v1.4.7/jadx-1.4.7.zip -O jadx.zip
